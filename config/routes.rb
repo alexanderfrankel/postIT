@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'requests#index'
+  root 'computers#index'
 
   devise_for :coaches
 
