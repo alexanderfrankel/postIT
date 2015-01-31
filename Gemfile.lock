@@ -191,11 +191,8 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   devise
-<<<<<<< HEAD
   faye-websocket
-=======
   faker
->>>>>>> c71e7189ce896e3fd0342a87fdf4cd7959050013
   jbuilder (~> 2.0)
   jquery-rails
   pg
