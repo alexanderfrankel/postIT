@@ -10,10 +10,3 @@
  36.times {
  	Computer.create(location: locations.pop, status: 0)
  }
-
- 3.times {
- 	coach = Coach.create(email: Faker::Internet.email, password: 'password')
- 	3.times {
- 		coach.requests << request_arr.pop
- 	}
- }
