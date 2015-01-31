@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   devise_for :coaches
 
-  resources :requests, only: [:index, :show, :edit, :create, :update]
+  resources :computers, only: [:index, :show, :edit, :create, :update]
 end
