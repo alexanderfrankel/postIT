@@ -35,6 +35,9 @@ gem 'faker'
 # gem 'capistrano-rails', group: :development
 
 gem 'bower-rails'
+gem "puma"
+gem "faye-websocket"
+gem "pry"
 
 gem 'angular-rails-templates'
 

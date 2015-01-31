@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require mustache
 //= require angular/angular
 //= require angular-route/angular-route
 //= require angular-resource/angular-resource
