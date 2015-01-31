@@ -2,7 +2,11 @@ class RequestsController < ApplicationController
   before_action :authenticate_coach!, except: [:create]
 
   def index
-    @requests = Request.where( status:[1,2] ) 
+    @requests = Request.where( status:[1,2] )
+  end
+
+  def show
+    @request = Request.find(params[:id])
   end
 
   def create
