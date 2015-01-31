@@ -6,13 +6,7 @@ class RequestsController < ApplicationController
   end
 
   def create
-    @request = Request.new(request_params)
-    if @request.save
-      redirect_to root_path
-    else
-      flash[:error] = 'request culdnt be craated'
-      redirect_to root_patht
-    end 
+    @request = Request.create(request_params)
   end
 
   def edit
