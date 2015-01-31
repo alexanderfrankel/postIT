@@ -2,7 +2,7 @@ class RequestsController < ApplicationController
   before_action :authenticate_coach!
 
   def index
-    @requests = Request.where( status: 1 ) 
+    @requests = Request.where( status:[1,2] ) 
   end
 
   def create
