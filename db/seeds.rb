@@ -5,13 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
- locations = %w(A3 A4 A5 A6 A8 A9 A1 A2 B4 B3 B2 B1 B5 B6 B7 B8 B9 C1 C2 C3 C4)
- statuses = %w(1 2 3)
- topics = %w(heroku activerecord js angular meteor bootstrap databases grammar cats)
-request_arr = []
- 15.times {
- 	r = Request.create(student: Faker::Name.name, location: locations.pop, status: statuses.sample, tag: topics.sample)
- 	request_arr << r
+ locations = %w(A1 A2 A3 A4 A5 A6 B1 B2 B3 B4 B5 B6 C1 C2 C3 C4 C5 C6 D1 D2 D3 D4 D5 D6 E1 E2 E3 E4 E5 F6 F1 F2 F3 F4 F5 F6)
+
+ 36.times {
+ 	Computer.create(location: locations.pop, status: 0)
  }
 
  3.times {
