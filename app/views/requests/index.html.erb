@@ -1,0 +1,10 @@
+
+<%= javascript_tag id: "websocket"%>
+  App = {
+    websocket_url = "ws://#{request.host}:#{request.port}"
+  }
+
+  $(function(){
+    var requestSocket
+  });
+<% end %>
