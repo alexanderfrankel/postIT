@@ -1,6 +1,7 @@
 var postit = angular.module('postitapp', [
   'templates',
   'ngRoute',
+  'ngResource',
   'controllers'
 ]);
 
