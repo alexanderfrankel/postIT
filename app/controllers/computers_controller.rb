@@ -36,6 +36,12 @@ class ComputersController < ApplicationController
     end
   end
 
+  def toggle
+    @computer = Computer.find(params[:id])
+    @computer.toggle_status
+    render :nothing => true
+  end
+
   private
 
   def request_params
