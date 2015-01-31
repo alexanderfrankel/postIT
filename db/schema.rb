@@ -34,14 +34,9 @@ ActiveRecord::Schema.define(version: 20150131155702) do
   add_index "coaches", ["email"], name: "index_coaches_on_email", unique: true, using: :btree
   add_index "coaches", ["reset_password_token"], name: "index_coaches_on_reset_password_token", unique: true, using: :btree
 
-  create_table "requests", force: :cascade do |t|
-    t.string   "student"
+  create_table "computers", force: :cascade do |t|
     t.string   "location"
-    t.integer  "status",     default: 1
-    t.string   "tag"
-    t.datetime "coach_in"
-    t.datetime "coach_out"
-    t.integer  "coach_id"
+    t.integer  "status",     default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

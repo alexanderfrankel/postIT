@@ -1,17 +1,17 @@
-class RequestsController < ApplicationController
+class ComputersController < ApplicationController
   before_action :authenticate_coach!, except: [:create]
 
   def index
-    @requests = Request.where( status:[1,2] )
+    @computers = Computer.all
   end
 
   def show
-    @request = Request.find(params[:id])
+    @computer = Computer.find(params[:id])
   end
 
   def create
-    @request = Request.new(request_params)
-    if @request.save
+    @computer = Computer.new(request_params)
+    if @computer.save
       respond_to do |format|
         format.json{ render json: 'A Coach will be here shortly' }
       end
@@ -23,12 +23,12 @@ class RequestsController < ApplicationController
   end
 
   def edit
-    @request = Request.find(params[:id])
+    @computer = Computer.find(params[:id])
   end
 
   def update
-    @request = Request.find(params[:id])
-    if @request.update(request_params)
+    @computer = Computer.find(params[:id])
+    if @computer.update(request_params)
       redirect_to root_path
     else
       flash[:error] = 'request couldnt be updated'
