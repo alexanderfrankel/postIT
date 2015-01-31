@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150131160811) do
+ActiveRecord::Schema.define(version: 20150131155702) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,21 +34,16 @@ ActiveRecord::Schema.define(version: 20150131160811) do
   add_index "coaches", ["email"], name: "index_coaches_on_email", unique: true, using: :btree
   add_index "coaches", ["reset_password_token"], name: "index_coaches_on_reset_password_token", unique: true, using: :btree
 
-  create_table "jobs", force: :cascade do |t|
-    t.datetime "time_in"
-    t.datetime "time_out"
-    t.integer  "coach_id"
-    t.integer  "request_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "requests", force: :cascade do |t|
     t.string   "student"
     t.string   "location"
+    t.integer  "status",     default: 1
+    t.string   "tag"
+    t.datetime "coach_in"
+    t.datetime "coach_out"
+    t.integer  "coach_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "status",     default: 1
   end
 
 end
