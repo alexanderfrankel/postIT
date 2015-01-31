@@ -7,7 +7,7 @@ class CreateRequestsTable < ActiveRecord::Migration
       t.string :tag
       t.datetime :coach_in
       t.datetime :coach_out
-      t.refereces :coach
+      t.references :coach
 
       t.timestamps
     end
