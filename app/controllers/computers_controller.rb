@@ -2,7 +2,7 @@ class ComputersController < ApplicationController
   before_action :authenticate_coach!, except: [:create]
 
   def index
-    @computers = Computer.where( status:[1,2] )
+    @computers = Computer.all 
   end
 
   def show
