@@ -1,4 +1,3 @@
-
 class RequestSocket
   def initialize(app)
     @app = app

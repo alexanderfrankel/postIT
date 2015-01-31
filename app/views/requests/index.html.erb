@@ -1,10 +1,6 @@
 
-<%= javascript_tag id: "websocket"%>
-  App = {
-    websocket_url = "ws://#{request.host}:#{request.port}"
-  }
-
-  $(function(){
-    var requestSocket
-  });
+<%= javascript_tag id: "listener"%>
+  setInterval(function(){
+       
+  }, 5000);
 <% end %>
