@@ -1,10 +1,21 @@
 class RequestsController < ApplicationController
-  before_action :authenticate_coach!
+  before_action :authenticate_coach!, except: [:create]
 
   def index
+    @requests = Request.where( status:[1,2] ) 
   end
 
   def create
+    @request = Request.new(request_params)
+    if @request.save
+      respond_to do |format|
+        format.json{ render json: 'A Coach will be here shortly' }
+      end
+    else
+      respond_to do |format|
+        format.json{ render json: 'Something whent wrong, please try again' }
+      end
+    end
   end
 
   def edit

@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20150131155702) do
   create_table "requests", force: :cascade do |t|
     t.string   "student"
     t.string   "location"
-    t.integer  "status"
+    t.integer  "status",     default: 1
     t.string   "tag"
     t.datetime "coach_in"
     t.datetime "coach_out"
