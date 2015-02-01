@@ -10,15 +10,10 @@ class ComputersController < ApplicationController
   end
 
   def create
-    @computer = Computer.new(request_params)
-    if @computer.save
-      respond_to do |format|
-        format.json{ render json: 'A Coach will be here shortly' }
-      end
-    else
-      respond_to do |format|
-        format.json{ render json: 'Something whent wrong, please try again' }
-      end
+    @computer = Computer.find_by(location: params[:request][:location])
+    @computer.toggle_status
+    respond_to do |format|
+      format.json{ render json: 'A Coach will be here shortly' }
     end
   end
 
